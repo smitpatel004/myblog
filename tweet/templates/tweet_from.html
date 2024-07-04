@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+{% block title %}
+chai aur code
+{% endblock %}
+{% block content %}
+<h1 class="text-center mt-4 text-white">cfgvbhjk<h1>
+    <h2>
+        {% if form.instance.pk %}
+        Edit tweet
+        {% else %}
+        create tweet
+        {% endif %}
+        <form method="POST" enctype="multipart/form-data" class="form">
+            {% csrf_token %}
+            {{form.as_p}}
+          <button class="btn btn-warning" type="submit">Submit</button>
+         </form>
+
+        <a href="{% url 'tweet_list' %}">Back</a>
+    </h2>
+    {% endblock %}
+
